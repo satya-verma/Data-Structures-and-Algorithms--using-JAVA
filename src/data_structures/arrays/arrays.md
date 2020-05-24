@@ -1,6 +1,6 @@
 # Arrays In Java
-=> The simple array in java cannot be used dynamically. For example. we have int[] array = new Int[5]; this array can store only 5 elements, its size cannot be changed in the future.</br>
+~~~~=> The simple array in java cannot be used dynamically. For example. we have int[] array = new Int[5]; this array can store only 5 elements, its size cannot be changed in the future.</br>
 => If you want an array which can be used dynamically you can use ArrayList in Java or</br> 
 => In this section we will build our own dynamic array data structure which will have methods like get, push, pop, shift, delete, insert.</br>
-=> shift method removes the first element of an array. </br>  
+=> shift method removes the first element of an array. </br>___  
 
