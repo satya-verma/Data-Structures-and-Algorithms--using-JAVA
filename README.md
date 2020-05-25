@@ -1,4 +1,4 @@
-# Data-Structures-and-Algorithms--using-JAVA
+# Data Structures and Algorithms using Java
 This repo contains implementation of data structures and algorithms using JAVA.</br>
 Liked the repo or did it helped you?--well, lets give a star to the repo.
 # How to use
