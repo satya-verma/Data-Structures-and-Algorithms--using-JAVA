@@ -1,4 +1,4 @@
-package data_structures.linked_lists.implementation;
+package data_structures.linked_lists.linked_list_implementation;
 
 import java.util.Arrays;
 
