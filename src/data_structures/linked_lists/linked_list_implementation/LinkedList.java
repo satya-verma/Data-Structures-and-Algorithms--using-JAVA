@@ -43,13 +43,58 @@ public class LinkedList {
         return myList;
     }
 
+    public void insert(int index, int value) {
+        if (index < 0 || index > length) {
+            System.err.println("Index Out Of Bounds For Length " + length);
+        } else if (index == 0) {
+            prepend(value);
+        } else if (index == length) {
+            append(value);
+        } else {
+            Node current = head;
+            for (int i = 0; i < index - 1; i++) {
+                current = current.next;
+            }
+            Node newNode = new Node(value);
+            newNode.next = current.next;
+            current.next = newNode;
+            length++;
+        }
+    }
+
+    public void remove(int index) {
+        if (index < 0 || index > length) {
+            System.err.println("Index Out Of Bounds For Length " + length);
+        } else if (index == 0) {
+            head = this.head.next;
+            length--;
+        } else {
+            Node current = head;
+            int i;
+            for (i = 0; i < index - 1; i++) {
+                current = current.next;
+            }
+            current.next = current.next.next;
+            length--;
+            if (i == length - 1) {
+                tail = current;
+            }
+        }
+    }
+
     public static void main(String[] args) {
         LinkedList myLinkedList = new LinkedList(10);
         myLinkedList.append(12);
         myLinkedList.append(16);
         myLinkedList.prepend(20);
         myLinkedList.prepend(50);
-        System.out.println(myLinkedList.getLength());
-        System.out.println(Arrays.toString(myLinkedList.printList()));
+        System.out.println("length: " + myLinkedList.getLength());
+        System.out.println("list: " + Arrays.toString(myLinkedList.printList()));
+        myLinkedList.insert(2, 25);
+        System.out.println("length: " + myLinkedList.getLength());
+        System.out.println("list: " + Arrays.toString(myLinkedList.printList()));
+        myLinkedList.remove(4);
+        System.out.println("length: " + myLinkedList.getLength());
+        System.out.println("list: " + Arrays.toString(myLinkedList.printList()));
     }
 }
