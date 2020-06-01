@@ -82,6 +82,20 @@ public class LinkedList {
         }
     }
 
+    public LinkedList reverse(LinkedList linkedList) {
+        LinkedList newList = new LinkedList(linkedList.head.value);
+        Node current = linkedList.head;
+        while (current.next != null) {
+            current = current.next;
+            Node newNode = new Node(current.value);
+            newNode.next = newList.head;
+            newList.head = newNode;
+            newList.length++;
+        }
+        return newList;
+    }
+
+
     public static void main(String[] args) {
         LinkedList myLinkedList = new LinkedList(10);
         myLinkedList.append(12);
@@ -96,5 +110,7 @@ public class LinkedList {
         myLinkedList.remove(4);
         System.out.println("length: " + myLinkedList.getLength());
         System.out.println("list: " + Arrays.toString(myLinkedList.printList()));
+        LinkedList linkedList2 = myLinkedList.reverse(myLinkedList);
+        System.out.println("reverse linkedList"+Arrays.toString(linkedList2.printList()));
     }
 }
