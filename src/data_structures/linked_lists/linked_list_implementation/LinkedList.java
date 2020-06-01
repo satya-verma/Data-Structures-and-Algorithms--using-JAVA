@@ -98,19 +98,24 @@ public class LinkedList {
 
     public static void main(String[] args) {
         LinkedList myLinkedList = new LinkedList(10);
+        //append
         myLinkedList.append(12);
         myLinkedList.append(16);
+        //prepend
         myLinkedList.prepend(20);
         myLinkedList.prepend(50);
         System.out.println("length: " + myLinkedList.getLength());
         System.out.println("list: " + Arrays.toString(myLinkedList.printList()));
+        //insert
         myLinkedList.insert(2, 25);
         System.out.println("length: " + myLinkedList.getLength());
         System.out.println("list: " + Arrays.toString(myLinkedList.printList()));
+        //remove
         myLinkedList.remove(4);
         System.out.println("length: " + myLinkedList.getLength());
         System.out.println("list: " + Arrays.toString(myLinkedList.printList()));
+        //reverse
         LinkedList linkedList2 = myLinkedList.reverse(myLinkedList);
-        System.out.println("reverse linkedList"+Arrays.toString(linkedList2.printList()));
+        System.out.println("reverse linkedList" + Arrays.toString(linkedList2.printList()));
     }
 }
