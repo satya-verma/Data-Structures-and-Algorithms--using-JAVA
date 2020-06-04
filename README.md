@@ -21,7 +21,7 @@ Data Structures
 <li>
 Algorithms
 <ul>
-<li>Recusrion</li>
+<li>Recursion</li>
 <li>Sorting<ul>
 <li>Bubble Sort</li>
 <li>Selection Sort</li>
