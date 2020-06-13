@@ -59,6 +59,7 @@ public class Trie {
                 return false;
             }
         }
+
         if (current.children.isEmpty()) {
             deleteAfter.children.remove(ch1);
             return true;
