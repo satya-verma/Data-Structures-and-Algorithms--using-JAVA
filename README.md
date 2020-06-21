@@ -2,7 +2,7 @@
 => This repo contains implementation of data structures and algorithms using JAVA.</br>
 => Suggestions or corrections would be really appreciable.
 # How to use
-=> you can either fork and clone or download the repository and open it on intellij idea or some other IDE or editor</br>
+=> you can clone or download the repository and open it on intellij idea or some other IDE or editor</br>
 => or you can navigate into the 'src' directory and look out for the specific sections you want to check for.</br>
 # Overview
 <ul>
