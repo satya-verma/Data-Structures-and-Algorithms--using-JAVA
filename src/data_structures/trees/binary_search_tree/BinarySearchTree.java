@@ -1,5 +1,7 @@
 package data_structures.trees.binary_search_tree;
 
+import java.util.ArrayList;
+
 public class BinarySearchTree {
     Node root = null;
 
@@ -132,11 +134,42 @@ public class BinarySearchTree {
         }
     }
 
+    ///////////////////////////////////////////////////////
+    //                breadth first search               //
+    //   note: {this method is from algorithms section-  //
+    // skip this if you are in Data Structures section}  //
+    ///////////////////////////////////////////////////////
+    public ArrayList<Integer> breadFirstSearch() {
+        Node currentNode = this.root;
+        ArrayList<Integer> resultArray = new ArrayList<>();
+        ArrayList<Node> queue = new ArrayList<>();
+        queue.add(currentNode);
+
+        while (queue.size() > 0) {
+            currentNode = queue.remove(0);
+            resultArray.add(currentNode.value);
+
+            if (currentNode.left != null) {
+                queue.add(currentNode.left);
+            }
+            if (currentNode.right != null) {
+                queue.add(currentNode.right);
+            }
+        }
+        return resultArray;
+    }
+
+
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
-        bst.insert(10);
+        bst.insert(9);
+        bst.insert(4);
+        bst.insert(6);
         bst.insert(20);
-        bst.insert(30);
+        bst.insert(170);
+        bst.insert(15);
+        bst.insert(1);
+        System.out.println(bst.breadFirstSearch());
         System.out.println(bst.lookup(20));
         bst.remove(20);
         System.out.println(bst.lookup(20));
