@@ -139,7 +139,7 @@ public class BinarySearchTree {
     //   note: {this method is from algorithms section-  //
     // skip this if you are in Data Structures section}  //
     ///////////////////////////////////////////////////////
-    public ArrayList<Integer> breadFirstSearch() {
+    public ArrayList<Integer> breadthFirstSearch() {
         Node currentNode = this.root;
         ArrayList<Integer> resultArray = new ArrayList<>();
         ArrayList<Node> queue = new ArrayList<>();
@@ -159,6 +159,31 @@ public class BinarySearchTree {
         return resultArray;
     }
 
+    ///////////////////////////////////////////////////////
+    //         breadth first search recursive            //
+    //   note: {this method is from algorithms section-  //
+    // skip this if you are in Data Structures section}  //
+    ///////////////////////////////////////////////////////
+    public ArrayList<Integer> breadthFirstSearchRecursive(
+            ArrayList<Node> queue,
+            ArrayList<Integer> resultArray
+    ) {
+        if (queue.size() == 0) {
+            return resultArray;
+        }
+
+        Node currentNode = queue.remove(0);
+        resultArray.add(currentNode.value);
+        if (currentNode.left != null) {
+            queue.add(currentNode.left);
+        }
+        if (currentNode.right != null) {
+            queue.add(currentNode.right);
+        }
+
+        return breadthFirstSearchRecursive(queue, resultArray);
+    }
+
 
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
@@ -169,8 +194,14 @@ public class BinarySearchTree {
         bst.insert(170);
         bst.insert(15);
         bst.insert(1);
-        System.out.println(bst.breadFirstSearch());
+
+        System.out.println(bst.breadthFirstSearch());
         System.out.println(bst.lookup(20));
+
+        ArrayList<Node> queue = new ArrayList<>();
+        queue.add(bst.root);
+        System.out.println(bst.breadthFirstSearchRecursive(queue, new ArrayList<Integer>()));
+
         bst.remove(20);
         System.out.println(bst.lookup(20));
     }
