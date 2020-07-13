@@ -200,7 +200,7 @@ public class BinarySearchTree {
 
         ArrayList<Node> queue = new ArrayList<>();
         queue.add(bst.root);
-        System.out.println(bst.breadthFirstSearchRecursive(queue, new ArrayList<Integer>()));
+        System.out.println(bst.breadthFirstSearchRecursive(queue, new ArrayList<>()));
 
         bst.remove(20);
         System.out.println(bst.lookup(20));
