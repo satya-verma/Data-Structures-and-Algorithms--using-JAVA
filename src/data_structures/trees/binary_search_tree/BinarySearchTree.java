@@ -184,8 +184,32 @@ public class BinarySearchTree {
         return breadthFirstSearchRecursive(queue, resultArray);
     }
 
+    ///////////////////////////////////////////////////////
+    //////////              DFS               /////////////
+    ///////////////////////////////////////////////////////
+    HelperFunctions hlp = new HelperFunctions();
 
+    public ArrayList<Integer> DFSInOrder() {
+        ArrayList<Integer> answer = new ArrayList<>();
+        return hlp.traverseInOrder(this.root, answer);
+    }
+
+    public ArrayList<Integer> DFSPreOrder() {
+        ArrayList<Integer> answer = new ArrayList<>();
+        return hlp.traversePreOrder(this.root, answer);
+    }
+
+    public ArrayList<Integer> DFSPostOrder() {
+        ArrayList<Integer> answer = new ArrayList<>();
+        return hlp.traversePostOrder(this.root, answer);
+    }
+
+    // main method
     public static void main(String[] args) {
+//                 9
+//            4        20
+//         1    6   15    170
+
         BinarySearchTree bst = new BinarySearchTree();
         bst.insert(9);
         bst.insert(4);
@@ -195,14 +219,18 @@ public class BinarySearchTree {
         bst.insert(15);
         bst.insert(1);
 
-        System.out.println(bst.breadthFirstSearch());
-        System.out.println(bst.lookup(20));
+        System.out.println("bfs: " + bst.breadthFirstSearch());
+        System.out.println("look for 20: " + bst.lookup(20));
 
         ArrayList<Node> queue = new ArrayList<>();
         queue.add(bst.root);
-        System.out.println(bst.breadthFirstSearchRecursive(queue, new ArrayList<>()));
+        System.out.println("bfs recursive: " + bst.breadthFirstSearchRecursive(queue, new ArrayList<>()));
+
+        System.out.println("dfs inOrder: " + bst.DFSInOrder());
+        System.out.println("dfs preOrder: " + bst.DFSPreOrder());
+        System.out.println("dfs postOrder: " + bst.DFSPostOrder());
 
         bst.remove(20);
-        System.out.println(bst.lookup(20));
+        System.out.println("look for 20 after removing 20: " + bst.lookup(20));
     }
 }
