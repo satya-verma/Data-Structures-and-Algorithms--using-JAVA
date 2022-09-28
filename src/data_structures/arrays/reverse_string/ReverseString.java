@@ -22,6 +22,12 @@ public class ReverseString {
         }
         return temp.toString();
     }
+    
+    //StringBuilder has an inbuilt method called reverse()
+     static void reverseWordWithStringBuilder(String word) {
+        StringBuilder reversedWord = new StringBuilder();
+        System.out.println(reversedWord.append(word).reverse());
+    }
 
     public static void main(String[] args) {
         // lets run our functions
@@ -29,5 +35,6 @@ public class ReverseString {
         ReverseString reverseString = new ReverseString();
         System.out.println(reverseString.reverse(greet));
         System.out.println(reverseString.reverse2(greet));
+        reverseWordWithStringBuilder("Anita lava la tina");
     }
 }
