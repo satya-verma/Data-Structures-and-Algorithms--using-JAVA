@@ -12,7 +12,7 @@ public class Factorial {
         if (number < 2) {
             return 1;
         }
-        return number * findFactorialIterative(number - 1);
+        return number * findFactorialRecursive(number - 1);
     }
 
     // iterative
